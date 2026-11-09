@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f1"><meta name="description" content="用聽、講、練，讓客語成為生活的一部分。">
+  <title>講客｜客語會話練習</title><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/"><span class="brand-mark">講</span><span>講客<span class="brand-sub">HAKKA SPEAKING PRACTICE</span></span></a><div class="top-note"><span class="live-dot"></span> 每天一點，講得更自然</div></header>
+  <main>
+    <section class="intro"><div class="eyebrow"><span>客語會話練習</span><span class="eyebrow-line"></span><span>DAILY PRACTICE</span></div><h1>聽懂一句，<em>開口講客。</em></h1><p>從日常情境開始，聽參考發音、錄下自己的回答，再看看和參考答案有多接近。</p></section>
+    <section class="practice-card">
+      <div class="card-head"><div class="step-label"><span class="step-number">01</span><span>今日練習</span></div><div class="progress"><span id="progressText">暖身開始</span><span class="progress-track"><i></i></span></div></div>
+      <div class="controls"><label>練習腔調<select id="dialect"><option value="sixian">四縣腔</option><option value="hailu">海陸腔</option><option value="dapu">大埔腔</option><option value="raoping">饒平腔</option><option value="zhaoan">詔安腔</option><option value="nansixian">南四縣腔</option></select></label><button class="text-button" id="newPrompt">換一題 <span>↗</span></button></div>
+      <div class="prompt-area"><div class="scene-tag"><span class="scene-icon">✳</span><span id="scene">生活情境</span></div><h2 id="question">今晡日恁熱，你想食麼个涼爽个東西？</h2><p class="question-hint" id="hint">試著用客語回答：你今天想吃什麼冰品？</p></div>
+      <div class="answer-panel"><div class="answer-heading"><span class="panel-label">參考講法</span><span class="answer-status" id="answerStatus">先想想看，再揭曉答案</span></div><div class="answer-content" id="answerContent"><span class="answer-placeholder">準備好了嗎？先用客語回答看看。</span></div><div class="answer-actions"><button class="button button-light" id="showAnswer"><span>✳</span> 看參考答案</button><button class="button button-play" id="playAnswer" disabled><span class="play-icon">▶</span> 聽標準發音</button></div></div>
+      <div class="record-section"><div class="record-copy"><span class="panel-label">換你開口</span><p id="recordHint">按下錄音，回答上方的問題。</p></div><div class="record-controls"><span class="record-time" id="recordTime">00:00</span><button class="record-button" id="recordButton" aria-label="開始錄音"><span class="record-dot"></span></button><span class="record-label" id="recordLabel">開始錄音</span></div></div>
+      <div class="result-panel" id="resultPanel" hidden><div class="result-heading"><span class="panel-label">練習回饋</span><span class="score-badge" id="scoreBadge">—</span></div><div class="result-grid"><div><span class="result-caption">辨識到的客語</span><p id="recognizedText">—</p></div><div><span class="result-caption">參考答案</span><p id="resultAnswer">—</p></div></div><div class="score-track"><i id="scoreBar"></i></div><p class="score-note" id="scoreNote">分數依字元相似度估算，供練習參考。</p></div>
+      <div class="card-footer"><span>✦　不怕講錯，敢講就進步</span><span>使用 Gohakka 客語語音技術</span></div>
+    </section>
+    <section class="how"><div class="how-title">練習的三個步驟 <span>HOW IT WORKS</span></div><div class="how-steps"><div><b>1</b><strong>讀情境</strong><span>想想日常會怎麼說</span></div><div><b>2</b><strong>聽與說</strong><span>聽參考發音，再錄下回答</span></div><div><b>3</b><strong>看回饋</strong><span>比對辨識結果與參考答案</span></div></div></section>
+  </main>
+  <footer>讓客話，從生活裡繼續說下去。 <span>© 講客</span></footer>
+  <div class="toast" id="toast" role="status"></div><script src="/app.js"></script>
+</body></html>

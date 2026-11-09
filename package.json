@@ -1,0 +1,8 @@
+{
+  "name": "hak-fui3fa3",
+  "version": "1.0.0",
+  "private": true,
+  "description": "客語會話練習平台，使用 Gohakka Pro API 翻譯、語音合成與辨識。",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=20" }
+}
