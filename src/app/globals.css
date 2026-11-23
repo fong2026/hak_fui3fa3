@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+html { min-width: 360px; background: #F8FAFC; scroll-behavior: smooth; }
+body { margin: 0; background: #F8FAFC; color: #1E3A5F; font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; }
+button, input, textarea, select { font: inherit; }
+button:disabled { cursor: not-allowed; opacity: .52; }
+
+@layer components {
+  .panel { @apply rounded-3xl border border-indigoHakka/[.08] bg-white shadow-card; }
+  .panel-heading { @apply flex items-center justify-between gap-3 border-b border-slate-100 px-5 py-4; }
+  .section-icon { @apply grid h-10 w-10 place-items-center rounded-2xl bg-indigoHakka/[.06] text-indigoHakka; }
+  .chip { @apply rounded-lg bg-indigoHakka/[.04] px-2 py-1 text-[9px] font-bold tracking-[.15em] text-indigoHakka/40; }
+  .icon-button { @apply inline-flex items-center gap-2 rounded-xl border border-indigoHakka/10 bg-white px-3 py-2 text-xs font-bold text-indigoHakka transition hover:border-indigoHakka/30 hover:shadow-sm; }
+  .example-button { @apply inline-flex items-center gap-1.5 rounded-lg border border-indigoHakka/10 bg-white px-2.5 py-1.5 text-[11px] font-semibold text-indigoHakka/70 transition hover:border-persimmon/40 hover:bg-persimmon/[.04] hover:text-persimmon; }
+  .primary-button { @apply inline-flex items-center gap-2 rounded-xl bg-persimmon px-4 py-3 text-sm font-bold text-white shadow-lg shadow-persimmon/20 transition hover:bg-amber-700 hover:shadow-xl; }
+  .toolbar-button { @apply inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-2.5 py-2 text-[10px] font-semibold text-slate-500 transition hover:border-indigoHakka/25 hover:text-indigoHakka; }
+  .lyric-row { @apply rounded-2xl border border-indigoHakka/[.07] bg-white p-4 shadow-sm transition; }
+  .lyric-active { @apply border-persimmon/50 bg-amber-50/60 shadow-md shadow-persimmon/10; }
+  .line-number { @apply mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-indigoHakka/[.05] font-mono text-[10px] font-bold text-indigoHakka/45 transition; }
+  .hakka-input { @apply w-full rounded-lg border border-transparent bg-transparent px-2 py-1 font-serif text-[17px] font-semibold text-indigoHakka outline-none transition placeholder:font-sans placeholder:text-sm placeholder:text-slate-300 focus:border-indigoHakka/15 focus:bg-slate-50; }
+  .pinyin-input { @apply mt-1 w-full rounded-lg border border-transparent bg-transparent px-2 py-1 font-mono text-xs tracking-wide text-persimmon/90 outline-none transition placeholder:font-sans placeholder:tracking-normal placeholder:text-slate-300 focus:border-persimmon/20 focus:bg-amber-50/40; }
+  .row-action { @apply inline-flex items-center gap-1.5 rounded-md px-2 py-1.5 text-[10px] font-semibold text-slate-400 transition hover:bg-indigoHakka/[.05] hover:text-indigoHakka; }
+  .player-main { @apply grid h-10 w-10 shrink-0 place-items-center rounded-full bg-indigoHakka text-white shadow-md transition hover:scale-105 hover:bg-indigoHakka/90; }
+  .download-button { @apply inline-flex shrink-0 items-center gap-2 rounded-xl bg-persimmon px-3.5 py-2.5 text-xs font-bold text-white shadow-md shadow-persimmon/15 transition hover:bg-amber-700; }
+}
+
+.source-area { width: 100%; height: 100%; min-height: 440px; resize: vertical; border: 0; outline: none; background: transparent; padding: 8px 12px 38px 20px; color: #1E3A5F; font: 500 16px/2.1 "Noto Serif TC", "Noto Serif CJK TC", serif; letter-spacing: .045em; }
+.source-area::placeholder { color: #b5bfca; font: 13px/2 "Noto Sans TC", sans-serif; letter-spacing: 0; }
+.wave-bars { display: flex; height: 20px; align-items: center; gap: 2px; overflow: hidden; }
+.wave-bars i { width: 2px; height: var(--bar); max-height: 18px; border-radius: 4px; background: #1E3A5F30; transform-origin: center; }
+.wave-bars i.wave-playing { background: #D97706; animation: wave 700ms ease-in-out infinite alternate; animation-delay: calc(var(--i, 0) * 33ms); }
+.wave-bars i:nth-child(3n).wave-playing { animation-delay: 170ms; }
+@keyframes wave { from { transform: scaleY(.35); } to { transform: scaleY(1); } }
+
+@media (max-width: 639px) {
+  html { min-width: 320px; }
+  .source-area { min-height: 310px; }
+}

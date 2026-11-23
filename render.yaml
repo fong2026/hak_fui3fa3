@@ -1,11 +1,17 @@
 services:
   - type: web
-    name: hak-fui3fa3
+    name: hakka-lyric-studio
     runtime: node
     plan: free
-    buildCommand: npm install
+    buildCommand: npm install && npm run build
     startCommand: npm start
     healthCheckPath: /api/health
     envVars:
-      - key: GOHAKKA_API_TOKEN
+      - key: GOHAKKA_TOKEN
         sync: false
+      - key: GOHAKKA_TRANSLATE_URL
+        value: https://api.gohakka.org/v3/pro/text/translations
+      - key: GOHAKKA_TTS_URL
+        value: https://api.gohakka.org/v3/pro/audio/speech
+      - key: GOHAKKA_ASR_URL
+        value: https://api.gohakka.org/v3/pro/audio/transcriptions
